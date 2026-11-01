@@ -6,7 +6,7 @@ metadata:
     app: student-portal
 spec:
   # Set explicitly so that a manual scale shows up as drift from Git.
-  replicas: "two"
+  replicas: 2
   selector:
     matchLabels:
       app: student-portal
