@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: student-portal-content
+data:
+  index.html: |
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Student Portal</title>
+      <style>
+        :root { --accent: #2563eb; }
+        body { font-family: system-ui, sans-serif; margin: 0; background: #f4f6fb; color: #1f2937; }
+        main { max-width: 640px; margin: 10vh auto; padding: 32px; background: #fff; border-radius: 12px;
+               box-shadow: 0 2px 12px rgba(0, 0, 0, .08); border-top: 6px solid var(--accent); }
+        h1 { margin-top: 0; }
+        code { background: #eef2ff; padding: 2px 6px; border-radius: 4px; }
+      </style>
+    </head>
+    <body>
+      <main>
+        <h1>Student Portal</h1>
+        <p>Welcome to the student portal.</p>
+        <p>Release: <code>v1</code></p>
+      </main>
+    </body>
+    </html>

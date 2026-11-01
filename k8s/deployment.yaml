@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-portal
+  labels:
+    app: student-portal
+spec:
+  # Set explicitly so that a manual scale shows up as drift from Git.
+  replicas: 2
+  selector:
+    matchLabels:
+      app: student-portal
+  template:
+    metadata:
+      labels:
+        app: student-portal
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.27-alpine
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 3
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi
+            limits:
+              memory: 64Mi
+          volumeMounts:
+            - name: content
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+      volumes:
+        - name: content
+          configMap:
+            name: student-portal-content
