@@ -22,8 +22,8 @@ data:
     <body>
       <main>
         <h1>Student Portal</h1>
-        <p>Welcome to the student portal. Timetables have been updated.</p>
-        <p>Release: <code>v6</code></p>
+        <p>Welcome to the student portal. Results are now published.</p>
+        <p>Release: <code>v5</code></p>
       </main>
     </body>
     </html>

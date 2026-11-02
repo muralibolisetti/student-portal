@@ -16,7 +16,7 @@ spec:
         app: student-portal
       annotations:
         # Change this with each release so pods restart and serve the new page at once.
-        release: v6
+        release: v5
     spec:
       containers:
         - name: web
